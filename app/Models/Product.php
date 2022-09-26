@@ -12,7 +12,7 @@ class Product extends Model
     use HasFactory;
     protected $table ='Products';
     protected $fillable = [
-        'title','average_rating','default_variant'
+        'title','average_rating'
     ];
     protected $hidden = [
 

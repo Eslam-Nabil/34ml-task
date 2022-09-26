@@ -17,7 +17,6 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->double('average_rating')->default(0);
-            $table->integer('default_variant')->nullable();
             $table->timestamps();
         });
     }

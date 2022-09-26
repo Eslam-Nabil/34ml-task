@@ -39,9 +39,9 @@ class VariantSeeder extends Seeder
                     }
                 }
             }
-            foreach($products as  $prod ){
-            $var=Variant::where('product_id',$prod->id)->orderBy('price','asc')->first();
-             Product::where('id',$prod->id)->update(['default_variant'=>$var->id]);
-            }
+            // foreach($products as  $prod ){
+            // $var=Variant::where('product_id',$prod->id)->orderBy('price','asc')->first();
+            //  Product::where('id',$prod->id)->update(['default_variant'=>$var->id]);
+            // }
     }
 }
