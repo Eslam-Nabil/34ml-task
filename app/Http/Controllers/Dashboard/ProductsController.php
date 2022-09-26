@@ -94,8 +94,8 @@ class ProductsController extends Controller
         }else{
             ## All products With no filter
         foreach($products as $prod){
-           $row=Product::where('id',$prod->id)->with(['variant' => function($query) use ($prod){
-                $query->where('id',$prod->default_variant)->orderBy('price','ASC')->first();
+           $row=Product::where('id',$prod->id)->with(['default_variant' => function($query) use ($prod){
+                $query->where('product_id',$prod->id)->orderBy('price','ASC')->first();
            }])->with('options')->get();
            $products_array[]=$row;
         }
