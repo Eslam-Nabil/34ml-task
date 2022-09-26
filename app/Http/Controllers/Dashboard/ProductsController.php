@@ -64,8 +64,8 @@ class ProductsController extends Controller
 
             foreach($products as $prod){
                 $row=Product::where(['id'=>$prod->id,'average_rating'=>$filter['average_rating']])
-                ->with(['default_variant' => function($query) use ($filter){
-                    $query->where('id',$prod->default_variant)->orderBy('price','ASC')->first();
+                ->with(['default_variant' => function($query) use ($filter,$prod){
+                    $query->where('product_id',$prod->id)->orderBy('price','ASC')->first();
                 }])->with('options')->get();
                 $products_array[]=$row;
             };
