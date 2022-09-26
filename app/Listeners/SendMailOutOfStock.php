@@ -26,6 +26,7 @@ class SendMailOutOfStock
      */
     public function handle(ProductOutOfStock $event)
     {
-        //
+
     }
+    
 }
